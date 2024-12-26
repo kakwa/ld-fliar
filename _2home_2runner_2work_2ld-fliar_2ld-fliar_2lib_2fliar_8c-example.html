@@ -397,8 +397,6 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ldfl_rule_count; i++) {</div>
-<div class="line">        ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a>, LOG_DEBUG, <span class="stringliteral">&quot;rule[%s] not relevant for call &#39;%s&#39;, skipping&quot;</span>,</div>
-<div class="line">                            ldfl_mapping[i].name, call);</div>
 <div class="line">        <span class="comment">// Rule not matching</span></div>
 <div class="line">        <span class="keywordflow">if</span> (!(ldfl_compiled_rules[i].mapping-&gt;operation &amp; mask) || (ldfl_compiled_rules[i].matching_regex == NULL)) {</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a>, LOG_DEBUG, <span class="stringliteral">&quot;rule[%s] not relevant for call &#39;%s&#39;, skipping&quot;</span>,</div>
@@ -417,7 +415,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">                             match_data,                            <span class="comment">// Match data structure</span></div>
 <div class="line">                             NULL                                   <span class="comment">// Default match context</span></div>
 <div class="line">        );</div>
-<div class="line">        <span class="keywordflow">if</span> (!rc) {</div>
+<div class="line">        <span class="keywordflow">if</span> (rc &lt;= 0) {</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a>, LOG_DEBUG, <span class="stringliteral">&quot;rule[%s] not matching pathname &#39;%s&#39; for call &#39;%s&#39;&quot;</span>,</div>
 <div class="line">                                ldfl_mapping[i].name, pathname, call);</div>
 <div class="line">            pcre2_match_data_free(match_data);</div>
@@ -509,10 +507,6 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ldfl_apply_rules(compiled_mapping_t *mapping_rules, <span class="keywordtype">int</span> num_rules, pcre2_match_data *match_group,</div>
 <div class="line">                      <span class="keyword">const</span> <span class="keywordtype">char</span> *pathname_in, <span class="keywordtype">char</span> **pathname_out) {</div>
-<div class="line">    *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
-<div class="line">    stpcpy(*pathname_out, pathname_in);</div>
-<div class="line">    <span class="keywordflow">return</span>;</div>
-<div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rules; i++) {</div>
 <div class="line">        <span class="keywordflow">switch</span> (mapping_rules[i].mapping-&gt;operation) {</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a>:</div>
@@ -520,23 +514,53 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a>:</div>
+<div class="line">            <span class="comment">// Extract the target replacement pattern.</span></div>
+<div class="line">            <span class="keywordtype">char</span>      *new_pathname    = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), PATH_MAX);</div>
+<div class="line">            PCRE2_SIZE replacement_len = PATH_MAX;</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Perform the substitution and store the result.</span></div>
+<div class="line">            pcre2_substitute(mapping_rules[i].matching_regex, (PCRE2_SPTR)pathname_in, PCRE2_ZERO_TERMINATED, 0,</div>
+<div class="line">                             PCRE2_SUBSTITUTE_GLOBAL, match_group, NULL, (PCRE2_SPTR)mapping_rules[i].mapping-&gt;target,</div>
+<div class="line">                             PCRE2_ZERO_TERMINATED, (PCRE2_UCHAR *)new_pathname, &amp;replacement_len);</div>
+<div class="line">            <span class="keywordflow">if</span> (replacement_len &lt;= 0) {</div>
+<div class="line">                ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING,</div>
+<div class="line">                                    <span class="stringliteral">&quot;Replacement in path failed for rule &#39;%s&#39; on path &#39;%s&#39;&quot;</span>,</div>
+<div class="line">                                    mapping_rules[i].mapping-&gt;name, pathname_in);</div>
+<div class="line">            }</div>
+<div class="line">            *pathname_out = new_pathname;</div>
+<div class="line"> </div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_DEBUG,</div>
+<div class="line">                                <span class="stringliteral">&quot;LDFL_OP_MAP Rule [%s] applied, path &#39;%s&#39; rewritten to &#39;%s&#39;&quot;</span>,</div>
+<div class="line">                                mapping_rules[i].mapping-&gt;name, pathname_in, *pathname_out);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061">LDFL_OP_EXEC_MAP</a>:</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_EXEC_MAP not yet handle&quot;</span>);</div>
+<div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
+<div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a>:</div>
+<div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
+<div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_MEM_OPEN not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a>:</div>
+<div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
+<div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_STATIC not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a>:</div>
+<div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
+<div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_PERM not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>:</div>
+<div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
+<div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_DENY not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
+<div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Unknown operation %d not yet handle&quot;</span>,</div>
 <div class="line">                                mapping_rules[i].mapping-&gt;operation);</div>
 <div class="line">        }</div>
