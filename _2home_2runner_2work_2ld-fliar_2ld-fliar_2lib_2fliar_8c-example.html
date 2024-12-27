@@ -507,6 +507,10 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ldfl_apply_rules(compiled_mapping_t *mapping_rules, <span class="keywordtype">int</span> num_rules, pcre2_match_data *match_group,</div>
 <div class="line">                      <span class="keyword">const</span> <span class="keywordtype">char</span> *pathname_in, <span class="keywordtype">char</span> **pathname_out) {</div>
+<div class="line">    <span class="keywordflow">if</span> (pathname_in == NULL) {</div>
+<div class="line">        *pathname_out = NULL;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
 <div class="line">    <span class="keywordflow">if</span> (num_rules &lt;= 0) {</div>
 <div class="line">        ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_DEBUG, <span class="stringliteral">&quot;No Rule to apply on path &#39;%s&#39;, returning the same path&quot;</span>,</div>
 <div class="line">                            pathname_in);</div>
