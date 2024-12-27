@@ -508,7 +508,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"><span class="keywordtype">void</span> ldfl_apply_rules(compiled_mapping_t *mapping_rules, <span class="keywordtype">int</span> num_rules, pcre2_match_data *match_group,</div>
 <div class="line">                      <span class="keyword">const</span> <span class="keywordtype">char</span> *pathname_in, <span class="keywordtype">char</span> **pathname_out) {</div>
 <div class="line">    <span class="keywordflow">if</span> (pathname_in == NULL) {</div>
-<div class="line">        *pathname_out = NULL;</div>
+<div class="line">        *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), 1);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">if</span> (num_rules &lt;= 0) {</div>
