@@ -811,6 +811,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;openat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
 <div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat, dirfd, reworked_path, flags);</div>
 <div class="line">    free(reworked_path);</div>
