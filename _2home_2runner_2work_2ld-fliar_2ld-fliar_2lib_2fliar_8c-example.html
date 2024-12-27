@@ -742,7 +742,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;fopen&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -763,7 +763,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;fopen64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -789,7 +789,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;openat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -812,7 +812,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;open&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -839,7 +839,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;open64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -866,7 +866,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;openat64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -888,7 +888,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;rename&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -912,7 +912,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;olddirfd&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -936,7 +936,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;renameat&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -958,7 +958,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;unlink&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -980,7 +980,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;unlinkat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1002,7 +1002,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;utime&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1025,7 +1025,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;utimes&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1046,7 +1046,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;access&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1068,7 +1068,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;fstatat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1089,7 +1089,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;__xstat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1110,7 +1110,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;__xstat64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1131,7 +1131,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;__lxstat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1153,7 +1153,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;__fxstatat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1176,7 +1176,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;utimensat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1202,7 +1202,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;execve&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1226,7 +1226,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;execl&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1252,7 +1252,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;execlp&quot;</span>, file, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, file, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1276,7 +1276,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;execv&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1300,7 +1300,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;execvp&quot;</span>, file, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, file, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1322,7 +1322,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;opendir&quot;</span>, name, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, name, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1343,7 +1343,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;mkdir&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1365,7 +1365,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;mkdirat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1386,7 +1386,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;rmdir&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1407,7 +1407,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;chdir&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1429,7 +1429,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;symlink&quot;</span>, linkpathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, target, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1451,7 +1451,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;readlink&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1472,7 +1472,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;link&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1496,7 +1496,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;linkat&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1518,7 +1518,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;chmod&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1539,7 +1539,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;truncate&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1561,7 +1561,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;faccessat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1582,7 +1582,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;stat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1603,7 +1603,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;lstat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1626,7 +1626,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;lchown&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1649,7 +1649,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;chown&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1672,7 +1672,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;fchmodat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1695,7 +1695,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;symlinkat&quot;</span>, linkpathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, target, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1717,7 +1717,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;mkfifo&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1740,7 +1740,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;mkfifoat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1763,7 +1763,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;mknodat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1786,7 +1786,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;mknod&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1809,7 +1809,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;statx&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1831,7 +1831,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;creat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1855,7 +1855,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;renamex_np&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
@@ -1879,7 +1879,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
 <div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
 <div class="line">    <span class="keywordflow">if</span> (ldfl_find_matching_rules(<span class="stringliteral">&quot;renameatx_np&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match)) {</div>
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
