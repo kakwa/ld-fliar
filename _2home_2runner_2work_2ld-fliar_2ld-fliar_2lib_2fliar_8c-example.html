@@ -492,10 +492,12 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        <span class="keywordtype">char</span> *combined_path = calloc(PATH_MAX, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
 <div class="line">        <span class="keywordflow">if</span> (snprintf(combined_path, PATH_MAX, <span class="stringliteral">&quot;%s/%s&quot;</span>, dir_path, pathname) &gt;= <span class="keyword">sizeof</span>(combined_path)) {</div>
 <div class="line">            errno = ENAMETOOLONG;</div>
+<div class="line">            free(combined_path);</div>
 <div class="line">            <span class="keywordflow">return</span> NULL;</div>
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        resolved_path = realpath(combined_path, NULL);</div>
+<div class="line">        free(combined_path);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (!resolved_path) {</div>
