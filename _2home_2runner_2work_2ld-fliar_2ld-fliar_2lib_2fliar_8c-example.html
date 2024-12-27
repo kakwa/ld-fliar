@@ -459,7 +459,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">if</span> (dirfd == AT_FDCWD) {</div>
 <div class="line">            <span class="comment">// Use current working directory</span></div>
-<div class="line">            <span class="keywordflow">if</span> (!getcwd(dir_path, <span class="keyword">sizeof</span>(dir_path))) {</div>
+<div class="line">            <span class="keywordflow">if</span> (getcwd(dir_path, <span class="keyword">sizeof</span>(dir_path)) == NULL) {</div>
 <div class="line">                perror(<span class="stringliteral">&quot;getcwd&quot;</span>);</div>
 <div class="line">                <span class="keywordflow">return</span> NULL;</div>
 <div class="line">            }</div>
