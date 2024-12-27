@@ -747,7 +747,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    FILE *ret = real_fopen(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -766,7 +768,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    FILE *ret = real_fopen64(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -813,7 +817,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open, reworked_path, flags);</div>
@@ -838,7 +844,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open64, reworked_path, flags);</div>
@@ -863,7 +871,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat64, dirfd, reworked_path, flags);</div>
@@ -883,7 +893,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_rename(reworked_path, newpath);</div>
 <div class="line">    free(reworked_path);</div>
@@ -905,7 +917,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameat2(olddirfd, reworked_path, newdirfd, newpath, flags);</div>
@@ -927,7 +941,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameat(olddirfd, reworked_path, newdirfd, newpath);</div>
@@ -947,7 +963,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_unlink(reworked_path);</div>
 <div class="line">    free(reworked_path);</div>
@@ -967,7 +985,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_unlinkat(dirfd, reworked_path, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -987,7 +1007,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utime(reworked_path, times);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1008,7 +1030,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utimes(reworked_path, times);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1027,7 +1051,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_access(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1047,7 +1073,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_fstatat(dirfd, pathname, statbuf, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1066,7 +1094,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___xstat(version, pathname, statbuf);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1085,7 +1115,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___xstat64(version, pathname, statbuf);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1104,7 +1136,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___lxstat(version, pathname, statbuf);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1124,7 +1158,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___fxstatat(version, dirfd, pathname, statbuf, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1145,7 +1181,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utimensat(dirfd, pathname, times, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1169,7 +1207,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execve(pathname, argv, envp);</div>
@@ -1191,7 +1231,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
@@ -1215,7 +1257,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, file, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_str_wrap(real_execlp, arg, reworked_path, arg);</div>
@@ -1237,7 +1281,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execv(pathname, argv);</div>
@@ -1259,7 +1305,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, file, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execvp(reworked_path, argv);</div>
@@ -1279,7 +1327,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, name, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    DIR *ret = real_opendir(reworked_path);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1298,7 +1348,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkdir(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1318,7 +1370,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkdirat(dirfd, reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1337,7 +1391,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_rmdir(reworked_path);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1356,7 +1412,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chdir(reworked_path);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1376,7 +1434,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, target, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO target</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_symlink(reworked_path, linkpathname);</div>
@@ -1396,7 +1456,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_readlink(reworked_path, buf, bufsiz);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1415,7 +1477,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_link(reworked_path, newpath);</div>
@@ -1437,7 +1501,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_linkat(olddirfd, reworked_path, newdirfd, newpath, flags);</div>
@@ -1457,7 +1523,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chmod(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1476,7 +1544,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_truncate(reworked_path, length);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1496,7 +1566,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_faccessat(dirfd, reworked_path, mode, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1515,7 +1587,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_stat(reworked_path, statbuf);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1534,7 +1608,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_lstat(reworked_path, statbuf);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1555,7 +1631,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_lchown(reworked_path, owner, group);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1576,7 +1654,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chown(reworked_path, owner, group);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1597,7 +1677,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_fchmodat(dirfd, reworked_path, mode, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1618,7 +1700,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, target, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_symlinkat(reworked_path, newdirfd, linkpathname);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1638,7 +1722,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkfifo(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1659,7 +1745,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkfifoat(dirfd, reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1680,7 +1768,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mknodat(dirfd, reworked_path, mode, dev);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1701,7 +1791,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mknod(reworked_path, mode, dev);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1722,7 +1814,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_statx(dirfd, reworked_path, flags, mask, statxbuf);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1742,7 +1836,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_creat(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
@@ -1764,7 +1860,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renamex_np(reworked_path, newpath, flags);</div>
@@ -1786,7 +1884,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
 <div class="line">    }</div>
 <div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    free(return_rules);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    };</div>
 <div class="line">    <span class="comment">// TODO newpath</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameatx_np(olddirfd, reworked_path, newdirfd, newpath, flags);</div>
