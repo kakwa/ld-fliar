@@ -823,7 +823,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fopen&quot;</span>, pathname, op_mask);</div>
 <div class="line">    FILE *ret           = real_fopen(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_fopen failed: reworked_path=%s, mode=%s, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_fopen failed: pathname=%s, mode=%s, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -835,7 +835,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fopen64&quot;</span>, pathname, op_mask);</div>
 <div class="line">    FILE *ret           = real_fopen64(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_fopen64 failed: reworked_path=%s, mode=%s, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_fopen64 failed: pathname=%s, mode=%s, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -855,8 +855,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat, dirfd, reworked_path, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_openat failed: dirfd=%d, reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
-<div class="line">                 flags, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_openat failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path, flags,</div>
+<div class="line">                 errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -875,7 +875,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open, reworked_path, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_open failed: reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_path, flags, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_open failed: pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_path, flags, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -895,7 +895,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open64, reworked_path, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_open64 failed: reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_path, flags, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_open64 failed: pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_path, flags, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -915,7 +915,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat64, dirfd, reworked_path, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_openat64 failed: dirfd=%d, reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_openat64 failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
 <div class="line">                 flags, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -930,8 +930,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;rename&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_rename(reworked_oldpath, reworked_newpath);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_rename failed: reworked_oldpath=%s, reworked_newpath=%s, errno=%d (%s)&quot;</span>, reworked_oldpath,</div>
-<div class="line">                 reworked_newpath, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_rename failed: oldpath=%s, newpath=%s, errno=%d (%s)&quot;</span>, reworked_oldpath, reworked_newpath,</div>
+<div class="line">                 errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
@@ -950,7 +950,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameat2(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
 <div class="line">    LDFL_LOG_ERR(ret,</div>
-<div class="line">                 <span class="stringliteral">&quot;real_renameat2 failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, flags=%d, &quot;</span></div>
+<div class="line">                 <span class="stringliteral">&quot;real_renameat2 failed: olddirfd=%d, oldpath=%s, newdirfd=%d, newpath=%s, flags=%d, &quot;</span></div>
 <div class="line">                 <span class="stringliteral">&quot;errno=%d (%s)&quot;</span>,</div>
 <div class="line">                 olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
@@ -968,9 +968,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameat(olddirfd, reworked_oldpath, newdirfd, reworked_newpath);</div>
-<div class="line">    LDFL_LOG_ERR(</div>
-<div class="line">        ret, <span class="stringliteral">&quot;real_renameat failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, errno=%d (%s)&quot;</span>,</div>
-<div class="line">        olddirfd, reworked_oldpath, newdirfd, reworked_newpath, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_renameat failed: olddirfd=%d, oldpath=%s, newdirfd=%d, newpath=%s, errno=%d (%s)&quot;</span>, olddirfd,</div>
+<div class="line">                 reworked_oldpath, newdirfd, reworked_newpath, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -983,7 +982,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;unlink&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_unlink(reworked_path);</div>
-<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_unlink failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_unlink failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -997,8 +996,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;unlinkat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_unlinkat(dirfd, reworked_path, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_unlinkat failed: dirfd=%d, reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
-<div class="line">                 reworked_path, flags, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_unlinkat failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
+<div class="line">                 flags, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1012,7 +1011,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;utime&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utime(reworked_path, times);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utime failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utime failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1027,8 +1026,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;utimes&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utimes(reworked_path, times);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utimes failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
-<div class="line">                 strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utimes failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1057,7 +1055,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;access&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_access(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_access failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_access failed: pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -1166,7 +1164,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_str_wrap(real_execl, arg, reworked_path, arg);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execl failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execl failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1182,8 +1180,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_str_wrap(real_execlp, arg, reworked_path, arg);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execlp failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
-<div class="line">                 strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execlp failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1215,8 +1212,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execvp(reworked_path, argv);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execvp failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
-<div class="line">                 strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execvp failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1229,8 +1225,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;opendir&quot;</span>, name, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    DIR *ret = real_opendir(reworked_path);</div>
-<div class="line">    LDFL_LOG_ERR(ret != NULL, <span class="stringliteral">&quot;real_opendir failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
-<div class="line">                 strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret != NULL, <span class="stringliteral">&quot;real_opendir failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1243,7 +1238,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkdir&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkdir(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkdir failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkdir failed: pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -1258,8 +1253,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkdirat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkdirat(dirfd, reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkdirat failed: dirfd=%d, reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
-<div class="line">                 reworked_path, mode, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkdirat failed: dirfd=%d, pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
+<div class="line">                 mode, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1272,7 +1267,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;rmdir&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_rmdir(reworked_path);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_rmdir failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_rmdir failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1285,7 +1280,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;chdir&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chdir(reworked_path);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chdir failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chdir failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1300,8 +1295,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_target       = apply_rules_and_cleanup(<span class="stringliteral">&quot;symlink&quot;</span>, target, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_symlink(reworked_target, reworked_linkpathname);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_symlink failed: reworked_target=%s, reworked_linkpathname=%s, errno=%d (%s)&quot;</span>,</div>
-<div class="line">                 reworked_target, reworked_linkpathname, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_symlink failed: target=%s, linkpathname=%s, errno=%d (%s)&quot;</span>, reworked_target,</div>
+<div class="line">                 reworked_linkpathname, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_linkpathname);</div>
 <div class="line">    free(reworked_target);</div>
@@ -1315,8 +1310,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;readlink&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_readlink(reworked_path, buf, bufsiz);</div>
-<div class="line">    LDFL_LOG_ERR(ret != -1, <span class="stringliteral">&quot;real_readlink failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
-<div class="line">                 strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret != -1, <span class="stringliteral">&quot;real_readlink failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1330,8 +1324,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;link&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_link(reworked_oldpath, reworked_newpath);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_link failed: reworked_oldpath=%s, reworked_newpath=%s, errno=%d (%s)&quot;</span>,</div>
-<div class="line">                 reworked_oldpath, reworked_newpath, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_link failed: oldpath=%s, newpath=%s, errno=%d (%s)&quot;</span>, reworked_oldpath,</div>
+<div class="line">                 reworked_newpath, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
@@ -1349,7 +1343,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_linkat(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0,</div>
-<div class="line">                 <span class="stringliteral">&quot;real_linkat failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, flags=%d, &quot;</span></div>
+<div class="line">                 <span class="stringliteral">&quot;real_linkat failed: olddirfd=%d, oldpath=%s, newdirfd=%d, newpath=%s, flags=%d, &quot;</span></div>
 <div class="line">                 <span class="stringliteral">&quot;errno=%d (%s)&quot;</span>,</div>
 <div class="line">                 olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line"> </div>
@@ -1365,7 +1359,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;chmod&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chmod(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chmod failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chmod failed: pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -1379,8 +1373,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;truncate&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_truncate(reworked_path, length);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_truncate failed: reworked_path=%s, length=%ld, errno=%d (%s)&quot;</span>, reworked_path, length,</div>
-<div class="line">                 errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_truncate failed: pathname=%s, length=%ld, errno=%d (%s)&quot;</span>, reworked_path, length, errno,</div>
+<div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1394,7 +1388,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;faccessat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_faccessat(dirfd, reworked_path, mode, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_faccessat failed: dirfd=%d, reworked_path=%s, mode=%d, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_faccessat failed: dirfd=%d, pathname=%s, mode=%d, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
 <div class="line">                 reworked_path, mode, flags, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -1408,7 +1402,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;stat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_stat(reworked_path, statbuf);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_stat failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_stat failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1421,7 +1415,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;lstat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_lstat(reworked_path, statbuf);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_lstat failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_lstat failed: pathname=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1436,8 +1430,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;lchown&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_lchown(reworked_path, owner, group);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_lchown failed: reworked_path=%s, owner=%d, group=%d, errno=%d (%s)&quot;</span>, reworked_path,</div>
-<div class="line">                 owner, group, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_lchown failed: pathname=%s, owner=%d, group=%d, errno=%d (%s)&quot;</span>, reworked_path, owner,</div>
+<div class="line">                 group, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1452,8 +1446,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;chown&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chown(reworked_path, owner, group);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chown failed: reworked_path=%s, owner=%d, group=%d, errno=%d (%s)&quot;</span>, reworked_path,</div>
-<div class="line">                 owner, group, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chown failed: pathname=%s, owner=%d, group=%d, errno=%d (%s)&quot;</span>, reworked_path, owner,</div>
+<div class="line">                 group, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1468,7 +1462,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fchmodat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_fchmodat(dirfd, reworked_path, mode, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_fchmodat failed: dirfd=%d, reworked_path=%s, mode=%d, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_fchmodat failed: dirfd=%d, pathname=%s, mode=%d, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
 <div class="line">                 reworked_path, mode, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1484,8 +1478,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_linkpathname = apply_rules_and_cleanup(<span class="stringliteral">&quot;symlinkat&quot;</span>, linkpathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_symlinkat(reworked_target, newdirfd, reworked_linkpathname);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0,</div>
-<div class="line">                 <span class="stringliteral">&quot;real_symlinkat failed: reworked_target=%s, newdirfd=%d, reworked_linkpathname=%s, errno=%d (%s)&quot;</span>,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_symlinkat failed: target=%s, newdirfd=%d, linkpathname=%s, errno=%d (%s)&quot;</span>,</div>
 <div class="line">                 reworked_target, newdirfd, reworked_linkpathname, errno, strerror(errno));</div>
 <div class="line">    free(reworked_target);</div>
 <div class="line">    free(reworked_linkpathname);</div>
@@ -1500,7 +1493,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkfifo&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkfifo(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkfifo failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkfifo failed: pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1515,8 +1508,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkfifoat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkfifoat(dirfd, reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkfifoat failed: dirfd=%d, reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
-<div class="line">                 reworked_path, mode, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkfifoat failed: dirfd=%d, pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
+<div class="line">                 mode, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1530,7 +1523,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mknodat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mknodat(dirfd, reworked_path, mode, dev);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mknodat failed: dirfd=%d, reworked_path=%s, mode=%d, dev=%ld, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mknodat failed: dirfd=%d, pathname=%s, mode=%d, dev=%ld, errno=%d (%s)&quot;</span>, dirfd,</div>
 <div class="line">                 reworked_path, mode, dev, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1545,8 +1538,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mknod&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mknod(reworked_path, mode, dev);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mknod failed: reworked_path=%s, mode=%d, dev=%ld, errno=%d (%s)&quot;</span>, reworked_path, mode,</div>
-<div class="line">                 dev, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mknod failed: pathname=%s, mode=%d, dev=%ld, errno=%d (%s)&quot;</span>, reworked_path, mode, dev,</div>
+<div class="line">                 errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1560,7 +1553,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;statx&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_statx(dirfd, reworked_path, flags, mask, statxbuf);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_statx failed: dirfd=%d, reworked_path=%s, flags=%d, mask=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_statx failed: dirfd=%d, pathname=%s, flags=%d, mask=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
 <div class="line">                 reworked_path, flags, mask, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -1575,7 +1568,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;creat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_creat(reworked_path, mode);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_creat failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_creat failed: pathname=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line"> </div>
@@ -1592,8 +1585,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renamex_np&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renamex_np(reworked_oldpath, reworked_newpath, flags);</div>
-<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_renamex_np failed: reworked_oldpath=%s, reworked_newpath=%s, flags=%d, errno=%d (%s)&quot;</span>,</div>
-<div class="line">                 reworked_oldpath, reworked_newpath, flags, errno, strerror(errno));</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_renamex_np failed: oldpath=%s, newpath=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_oldpath,</div>
+<div class="line">                 reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1610,7 +1603,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameatx_np(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0,</div>
-<div class="line">                 <span class="stringliteral">&quot;real_renameatx_np failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, &quot;</span></div>
+<div class="line">                 <span class="stringliteral">&quot;real_renameatx_np failed: olddirfd=%d, oldpath=%s, newdirfd=%d, newpath=%s, &quot;</span></div>
 <div class="line">                 <span class="stringliteral">&quot;flags=%d, errno=%d (%s)&quot;</span>,</div>
 <div class="line">                 olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
