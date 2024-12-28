@@ -749,6 +749,20 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>, LOG_DEBUG, <span class="stringliteral">&quot;initialized&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span> *apply_rules_and_cleanup(<span class="keywordtype">char</span> *func_name, <span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, uint64_t op_mask) {</div>
+<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
+<div class="line">    compiled_mapping_t *return_rules;</div>
+<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
+<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
+<div class="line">    ldfl_find_matching_rules(func_name, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
+<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
+<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
+<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
+<div class="line">        free(return_rules);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> reworked_path;</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// de-init function</span></div>
 <div class="line"><span class="comment">// free compiled regexp</span></div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> __attribute__((destructor(101))) ldfl_dinit() {</div>
@@ -761,18 +775,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    uint64_t op_mask = <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>;</div>
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;fopen called: pathname=%s, mode=%s&quot;</span>, pathname, mode);</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;fopen&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    FILE *ret = real_fopen(reworked_path, mode);</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fopen&quot;</span>, pathname, op_mask);</div>
+<div class="line">    FILE *ret           = real_fopen(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -781,18 +785,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    uint64_t op_mask = <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>;</div>
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;fopen64 called: pathname=%s, mode=%s&quot;</span>, pathname, mode);</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;fopen64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    FILE *ret = real_fopen64(reworked_path, mode);</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fopen64&quot;</span>, pathname, op_mask);</div>
+<div class="line">    FILE *ret           = real_fopen64(reworked_path, mode);</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -806,16 +800,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;openat called: dirfd=%d, pathname=%s, flags=%d, mode=%o&quot;</span>, dirfd,</div>
 <div class="line">                        pathname, flags, va_arg(args, mode_t));</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;openat&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;openat&quot;</span>, pathname, op_mask);</div>
+<div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat, dirfd, reworked_path, flags);</div>
 <div class="line">    free(reworked_path);</div>
@@ -831,16 +817,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;open called: pathname=%s, flags=%d, mode=%o&quot;</span>, pathname, flags,</div>
 <div class="line">                        va_arg(args, mode_t));</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;open&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;open&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open, reworked_path, flags);</div>
@@ -857,16 +834,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;open64 called: pathname=%s, flags=%d, mode=%o&quot;</span>, pathname, flags,</div>
 <div class="line">                        va_arg(args, mode_t));</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;open64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;open64&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open64, reworked_path, flags);</div>
@@ -883,16 +851,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;openat64 called: dirfd=%d, pathname=%s, flags=%d, mode=%o&quot;</span>, dirfd,</div>
 <div class="line">                        pathname, flags, va_arg(args, mode_t));</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;openat64&quot;</span>, pathname, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, pathname, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;openat64&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat64, dirfd, reworked_path, flags);</div>
@@ -904,19 +863,13 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    uint64_t op_mask = <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a> | <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>;</div>
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>, LOG_DEBUG, <span class="stringliteral">&quot;rename called: oldpath=%s, newpath=%s&quot;</span>, oldpath, newpath);</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;rename&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
-<div class="line">    <span class="comment">// TODO newpath</span></div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_rename(reworked_path, newpath);</div>
-<div class="line">    free(reworked_path);</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_oldpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;rename&quot;</span>, oldpath, op_mask);</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;rename&quot;</span>, newpath, op_mask);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_rename(reworked_oldpath, reworked_newpath);</div>
+<div class="line"> </div>
+<div class="line">    free(reworked_oldpath);</div>
+<div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -927,20 +880,12 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">                        <span class="stringliteral">&quot;renameat2 called: olddirfd=%d, oldpath=%s, newdirfd=%d, newpath=%s, flags=%u&quot;</span>, olddirfd,</div>
 <div class="line">                        oldpath, newdirfd, newpath, flags);</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;olddirfd&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
-<div class="line">    <span class="comment">// TODO newpath</span></div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_oldpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat2&quot;</span>, oldpath, op_mask);</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat2&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_renameat2(olddirfd, reworked_path, newdirfd, newpath, flags);</div>
-<div class="line">    free(reworked_path);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_renameat2(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
+<div class="line">    free(reworked_oldpath);</div>
+<div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -950,20 +895,12 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">                        <span class="stringliteral">&quot;renameat called: olddirfd=%d, oldpath=%s, newdirfd=%d, newpath=%s&quot;</span>, olddirfd, oldpath,</div>
 <div class="line">                        newdirfd, newpath);</div>
 <div class="line">    RINIT;</div>
-<div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
-<div class="line">    compiled_mapping_t *return_rules;</div>
-<div class="line">    pcre2_match_data   *return_pcre_match = NULL;</div>
-<div class="line">    <span class="keywordtype">int</span>                 num_rules         = 0;</div>
-<div class="line">    ldfl_find_matching_rules(<span class="stringliteral">&quot;renameat&quot;</span>, oldpath, op_mask, &amp;return_rules, &amp;num_rules, &amp;return_pcre_match);</div>
-<div class="line">    ldfl_apply_rules(return_rules, num_rules, return_pcre_match, oldpath, &amp;reworked_path);</div>
-<div class="line">    pcre2_match_data_free(return_pcre_match);</div>
-<div class="line">    <span class="keywordflow">if</span> (num_rules &gt; 0) {</div>
-<div class="line">        free(return_rules);</div>
-<div class="line">    };</div>
-<div class="line">    <span class="comment">// TODO newpath</span></div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_oldpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat&quot;</span>, oldpath, op_mask);</div>
+<div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_renameat(olddirfd, reworked_path, newdirfd, newpath);</div>
-<div class="line">    free(reworked_path);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_renameat(olddirfd, reworked_oldpath, newdirfd, reworked_newpath);</div>
+<div class="line">    free(reworked_oldpath);</div>
+<div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
 <div class="line"> </div>
