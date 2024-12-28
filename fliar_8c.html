@@ -115,11 +115,13 @@ Typedefs</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:a1bdab280ef8641c794cdbd2befac9255"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a> { <br />
 &#160;&#160;<a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a> = 1ULL &lt;&lt; 0
-, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a> = 1ULL &lt;&lt; 1
-, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a> = 1ULL &lt;&lt; 2
-, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a> = 1ULL &lt;&lt; 3
+, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d">LDFL_LOG_FN_CALL_ERR</a> = 1ULL &lt;&lt; 1
+, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce">LDFL_LOG_MAPPING_RULE_SEARCH</a> = 1ULL &lt;&lt; 2
+, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498">LDFL_LOG_MAPPING_RULE_FOUND</a> = 1ULL &lt;&lt; 3
 , <br />
-&#160;&#160;<a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d">LDFL_LOG_ALL</a> = ~0ULL
+&#160;&#160;<a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a> = 1ULL &lt;&lt; 4
+, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a> = 1ULL &lt;&lt; 5
+, <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d">LDFL_LOG_ALL</a> = ~0ULL
 <br />
  }</td></tr>
 <tr class="memdesc:a1bdab280ef8641c794cdbd2befac9255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask flags for specifying logging categories.  <a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">More...</a><br /></td></tr>
@@ -174,7 +176,7 @@ Enumerations</h2></td></tr>
 <li><code>ldfl_syslog_logger</code>: Logs messages to the system log (syslog). </li>
 </ul>
 </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a17">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a19">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
 </dl>
 
 </div>
@@ -197,16 +199,20 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e"></a>LDFL_LOG_FN_CALL&#160;</td><td class="fielddoc"><p>Log LibC function calls. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae"></a>LDFL_LOG_MAPPING_SEARCH&#160;</td><td class="fielddoc"><p>Log mapping search operations. </p>
+<tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d"></a>LDFL_LOG_FN_CALL_ERR&#160;</td><td class="fielddoc"><p>Log LibC function calls errors </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784"></a>LDFL_LOG_MAPPING_APPLY&#160;</td><td class="fielddoc"><p>Log mapping application operations. </p>
+<tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce"></a>LDFL_LOG_MAPPING_RULE_SEARCH&#160;</td><td class="fielddoc"><p>Log mapping search operations. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498"></a>LDFL_LOG_MAPPING_RULE_FOUND&#160;</td><td class="fielddoc"><p>Log mapping found operations. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220"></a>LDFL_LOG_MAPPING_RULE_APPLY&#160;</td><td class="fielddoc"><p>Log mapping application operations. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb"></a>LDFL_LOG_INIT&#160;</td><td class="fielddoc"><p>Log initialization and deinitialization operations. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d"></a>LDFL_LOG_ALL&#160;</td><td class="fielddoc"><p>Log all categories. </p>
 </td></tr>
 </table>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a5">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a7">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
 </dl>
 
 </div>
@@ -244,7 +250,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598"></a>LDFL_OP_END&#160;</td><td class="fielddoc"><p>End marker. </p>
 </td></tr>
 </table>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a15">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a17">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
 </dl>
 
 </div>

@@ -122,24 +122,26 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="preprocessor">#include &lt;pcre2.h&gt;</span></div>
 <div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line">    <a name="a0"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>        = 1ULL &lt;&lt; 0, </div>
-<div class="line">    <a name="a1"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a> = 1ULL &lt;&lt; 1, </div>
-<div class="line">    <a name="a2"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>  = 1ULL &lt;&lt; 2, </div>
-<div class="line">    <a name="a3"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>           = 1ULL &lt;&lt; 3, </div>
-<div class="line">    <a name="a4"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d">LDFL_LOG_ALL</a>            = ~0ULL      </div>
-<div class="line">} <a name="a5"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a>;</div>
+<div class="line">    <a name="a0"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>             = 1ULL &lt;&lt; 0, </div>
+<div class="line">    <a name="a1"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d">LDFL_LOG_FN_CALL_ERR</a>         = 1ULL &lt;&lt; 1, </div>
+<div class="line">    <a name="a2"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce">LDFL_LOG_MAPPING_RULE_SEARCH</a> = 1ULL &lt;&lt; 2, </div>
+<div class="line">    <a name="a3"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498">LDFL_LOG_MAPPING_RULE_FOUND</a>  = 1ULL &lt;&lt; 3, </div>
+<div class="line">    <a name="a4"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>  = 1ULL &lt;&lt; 4, </div>
+<div class="line">    <a name="a5"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>                = 1ULL &lt;&lt; 5, </div>
+<div class="line">    <a name="a6"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d">LDFL_LOG_ALL</a>                 = ~0ULL      </div>
+<div class="line">} <a name="a7"></a><a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line">    <a name="a6"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a>     = 1ULL &lt;&lt; 0, </div>
-<div class="line">    <a name="a7"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a>      = 1ULL &lt;&lt; 1, </div>
-<div class="line">    <a name="a8"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061">LDFL_OP_EXEC_MAP</a> = 1ULL &lt;&lt; 2, </div>
-<div class="line">    <a name="a9"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a> = 1ULL &lt;&lt; 3, </div>
-<div class="line">    <a name="a10"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a>   = 1ULL &lt;&lt; 4, </div>
-<div class="line">    <a name="a11"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a>     = 1ULL &lt;&lt; 5, </div>
-<div class="line">    <a name="a12"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>     = 1ULL &lt;&lt; 6, </div>
-<div class="line">    <a name="a13"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f">LDFL_OP_RO</a>       = 1ULL &lt;&lt; 7, </div>
-<div class="line">    <a name="a14"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598">LDFL_OP_END</a>      = 0ULL       </div>
-<div class="line">} <a name="a15"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493">ldfl_operation_t</a>;</div>
+<div class="line">    <a name="a8"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a>     = 1ULL &lt;&lt; 0, </div>
+<div class="line">    <a name="a9"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a>      = 1ULL &lt;&lt; 1, </div>
+<div class="line">    <a name="a10"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061">LDFL_OP_EXEC_MAP</a> = 1ULL &lt;&lt; 2, </div>
+<div class="line">    <a name="a11"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a> = 1ULL &lt;&lt; 3, </div>
+<div class="line">    <a name="a12"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a>   = 1ULL &lt;&lt; 4, </div>
+<div class="line">    <a name="a13"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a>     = 1ULL &lt;&lt; 5, </div>
+<div class="line">    <a name="a14"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>     = 1ULL &lt;&lt; 6, </div>
+<div class="line">    <a name="a15"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f">LDFL_OP_RO</a>       = 1ULL &lt;&lt; 7, </div>
+<div class="line">    <a name="a16"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598">LDFL_OP_END</a>      = 0ULL       </div>
+<div class="line">} <a name="a17"></a><a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493">ldfl_operation_t</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>      *name;           </div>
@@ -147,15 +149,34 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493">ldfl_operation_t</a> operation;      </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">void</span>      *target;         </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span>      *extra_options;  </div>
-<div class="line">} <a name="_a16"></a><a class="code" href="structldfl__mapping__t.html">ldfl_mapping_t</a>;</div>
+<div class="line">} <a name="_a18"></a><a class="code" href="structldfl__mapping__t.html">ldfl_mapping_t</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">typedef</span> void (*<a name="a17"></a><a class="code" href="fliar_8c.html#af01e883a475e384c464dcaee00aa9d75">ldfl_logger_t</a>)(uint64_t mask, <span class="keywordtype">int</span> priority, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...);</div>
+<div class="line"><span class="keyword">typedef</span> void (*<a name="a19"></a><a class="code" href="fliar_8c.html#af01e883a475e384c464dcaee00aa9d75">ldfl_logger_t</a>)(uint64_t mask, <span class="keywordtype">int</span> priority, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...);</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line">    <span class="keywordtype">int</span>           log_level; </div>
 <div class="line">    <a class="code" href="fliar_8c.html#af01e883a475e384c464dcaee00aa9d75">ldfl_logger_t</a> logger;    </div>
 <div class="line">    uint64_t      log_mask;  </div>
-<div class="line">} <a name="_a18"></a><a class="code" href="structldfl__setting__t.html">ldfl_setting_t</a>;</div>
+<div class="line">} <a name="_a20"></a><a class="code" href="structldfl__setting__t.html">ldfl_setting_t</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> *ldfl_log_category_to_string(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a> category) {</div>
+<div class="line">    <span class="keywordflow">switch</span> (category) {</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;FN_CALL&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d">LDFL_LOG_FN_CALL_ERR</a>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;FN_ERR&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce">LDFL_LOG_MAPPING_RULE_SEARCH</a>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MAPPING_RULE_SEARCH&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498">LDFL_LOG_MAPPING_RULE_FOUND</a>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MAPPING_RULE_FOUND&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;MAPPING_RULE_APPLY&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;INIT&quot;</span>;</div>
+<div class="line">    <span class="keywordflow">default</span>:</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Wrapper struct to store compiled regex</span></div>
 <div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
@@ -178,9 +199,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"><span class="keywordtype">void</span> ldfl_stderr_logger(uint64_t mask, <span class="keywordtype">int</span> priority, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...) {</div>
 <div class="line">    va_list args;</div>
 <div class="line">    va_start(args, fmt);</div>
-<div class="line">    <span class="keywordflow">if</span> (priority &gt; ldfl_setting.<a name="a19"></a><a class="code" href="structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e">log_level</a>)</div>
+<div class="line">    <span class="keywordflow">if</span> (priority &gt; ldfl_setting.<a name="a21"></a><a class="code" href="structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e">log_level</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">    <span class="keywordflow">if</span> (!(mask &amp; ldfl_setting.<a name="a20"></a><a class="code" href="structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0">log_mask</a>))</div>
+<div class="line">    <span class="keywordflow">if</span> (!(mask &amp; ldfl_setting.<a name="a22"></a><a class="code" href="structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0">log_mask</a>))</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"> </div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;LOG_%s &quot;</span>,</div>
@@ -197,19 +218,35 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    va_end(args);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Syslog logger</span></div>
+<div class="line"><span class="comment">// Syslog logger function</span></div>
 <div class="line"><span class="keywordtype">void</span> ldfl_syslog_logger(uint64_t mask, <span class="keywordtype">int</span> priority, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...) {</div>
 <div class="line">    <span class="keywordflow">if</span> (priority &gt; ldfl_setting.<a class="code" href="structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e">log_level</a>)</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (!(mask &amp; ldfl_setting.<a class="code" href="structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0">log_mask</a>))</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line"> </div>
+<div class="line">    <span class="comment">// Convert the mask into log category string</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *category_str = ldfl_log_category_to_string((<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a>)mask);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Allocate a buffer to build the log message</span></div>
 <div class="line">    va_list args;</div>
 <div class="line">    va_start(args, fmt);</div>
-<div class="line">    openlog(NULL, LOG_PID, LOG_USER);</div>
-<div class="line">    vsyslog(priority, fmt, args);</div>
-<div class="line">    closelog();</div>
+<div class="line"> </div>
+<div class="line">    FILE  *stream;</div>
+<div class="line">    <span class="keywordtype">char</span>  *log_message;</div>
+<div class="line">    <span class="keywordtype">size_t</span> len;</div>
+<div class="line">    stream = open_memstream(&amp;log_message, &amp;len);</div>
+<div class="line">    fprintf(stream, <span class="stringliteral">&quot;LDFL_%s: &quot;</span>, category_str);</div>
+<div class="line">    vfprintf(stream, fmt, args);</div>
 <div class="line">    va_end(args);</div>
+<div class="line">    fflush(stream);</div>
+<div class="line">    fclose(stream);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Open the syslog</span></div>
+<div class="line">    openlog(NULL, LOG_PID, LOG_USER);</div>
+<div class="line">    syslog(priority, <span class="stringliteral">&quot;%s&quot;</span>, log_message); <span class="comment">// Log the built message</span></div>
+<div class="line">    closelog();</div>
+<div class="line">    free(log_message);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Render Nullable array (for logging things like argv or envp)</span></div>
@@ -373,7 +410,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        <span class="keywordflow">if</span> (!re) {</div>
 <div class="line">            PCRE2_UCHAR buffer[256];</div>
 <div class="line">            pcre2_get_error_message(errornumber, buffer, <span class="keyword">sizeof</span>(buffer));</div>
-<div class="line">            ldfl_setting.<a name="a21"></a><a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>, LOG_CRIT, <span class="stringliteral">&quot;rule[%s], PCRE2 compilation failed at offset %d: %s\n&quot;</span>,</div>
+<div class="line">            ldfl_setting.<a name="a23"></a><a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>, LOG_CRIT, <span class="stringliteral">&quot;rule[%s], PCRE2 compilation failed at offset %d: %s\n&quot;</span>,</div>
 <div class="line">                                ldfl_mapping[i].name, (<span class="keywordtype">int</span>)erroroffset, buffer);</div>
 <div class="line">            assert(re);</div>
 <div class="line">        }</div>
@@ -399,8 +436,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ldfl_rule_count; i++) {</div>
 <div class="line">        <span class="comment">// Rule not matching</span></div>
 <div class="line">        <span class="keywordflow">if</span> (!(ldfl_compiled_rules[i].mapping-&gt;operation &amp; mask) || (ldfl_compiled_rules[i].matching_regex == NULL)) {</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a>, LOG_DEBUG, <span class="stringliteral">&quot;rule[%s] not relevant for call &#39;%s&#39;, skipping&quot;</span>,</div>
-<div class="line">                                ldfl_mapping[i].name, call);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce">LDFL_LOG_MAPPING_RULE_SEARCH</a>, LOG_DEBUG,</div>
+<div class="line">                                <span class="stringliteral">&quot;rule[%s] not relevant for call &#39;%s&#39;, skipping&quot;</span>, ldfl_mapping[i].name, call);</div>
 <div class="line">            <span class="keywordflow">continue</span>;</div>
 <div class="line">        }</div>
 <div class="line"> </div>
@@ -416,8 +453,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">                             NULL                                   <span class="comment">// Default match context</span></div>
 <div class="line">        );</div>
 <div class="line">        <span class="keywordflow">if</span> (rc &lt;= 0) {</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a>, LOG_DEBUG, <span class="stringliteral">&quot;rule[%s] not matching pathname &#39;%s&#39; for call &#39;%s&#39;&quot;</span>,</div>
-<div class="line">                                ldfl_mapping[i].name, pathname, call);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce">LDFL_LOG_MAPPING_RULE_SEARCH</a>, LOG_DEBUG,</div>
+<div class="line">                                <span class="stringliteral">&quot;rule[%s] not matching pathname &#39;%s&#39; for call &#39;%s&#39;&quot;</span>, ldfl_mapping[i].name, pathname,</div>
+<div class="line">                                call);</div>
 <div class="line">            pcre2_match_data_free(match_data);</div>
 <div class="line">            <span class="keywordflow">continue</span>;</div>
 <div class="line">        }</div>
@@ -432,7 +470,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; matching_rule_count; j++) {</div>
 <div class="line">            (*return_rules)[j] = ldfl_compiled_rules[j + i];</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a>, LOG_INFO,</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498">LDFL_LOG_MAPPING_RULE_FOUND</a>, LOG_INFO,</div>
 <div class="line">                                <span class="stringliteral">&quot;rule[%s] match pathname &#39;%s&#39;, selected for call &#39;%s&#39;&quot;</span>, ldfl_mapping[i].name, pathname,</div>
 <div class="line">                                call);</div>
 <div class="line">        }</div>
@@ -514,8 +552,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">if</span> (num_rules &lt;= 0) {</div>
-<div class="line">        ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_DEBUG, <span class="stringliteral">&quot;No Rule to apply on path &#39;%s&#39;, returning the same path&quot;</span>,</div>
-<div class="line">                            pathname_in);</div>
+<div class="line">        ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_DEBUG,</div>
+<div class="line">                            <span class="stringliteral">&quot;No Rule to apply on path &#39;%s&#39;, returning the same path&quot;</span>, pathname_in);</div>
 <div class="line"> </div>
 <div class="line">        *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">        stpcpy(*pathname_out, pathname_in);</div>
@@ -538,19 +576,22 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">                             PCRE2_SUBSTITUTE_GLOBAL, match_group, NULL, (PCRE2_SPTR)mapping_rules[i].mapping-&gt;target,</div>
 <div class="line">                             PCRE2_ZERO_TERMINATED, (PCRE2_UCHAR *)new_pathname, &amp;replacement_len);</div>
 <div class="line">            <span class="keywordflow">if</span> (replacement_len &lt;= 0) {</div>
-<div class="line">                ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING,</div>
+<div class="line">                ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING,</div>
 <div class="line">                                    <span class="stringliteral">&quot;Replacement in path failed for rule &#39;%s&#39; on path &#39;%s&#39;&quot;</span>,</div>
 <div class="line">                                    mapping_rules[i].mapping-&gt;name, pathname_in);</div>
+<div class="line">                free(new_pathname);</div>
+<div class="line">                *pathname_out = NULL;</div>
+<div class="line">                <span class="keywordflow">return</span>;</div>
 <div class="line">            }</div>
 <div class="line">            *pathname_out = new_pathname;</div>
 <div class="line"> </div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_DEBUG,</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_DEBUG,</div>
 <div class="line">                                <span class="stringliteral">&quot;LDFL_OP_MAP Rule [%s] applied, path &#39;%s&#39; rewritten to &#39;%s&#39;&quot;</span>,</div>
 <div class="line">                                mapping_rules[i].mapping-&gt;name, pathname_in, *pathname_out);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061">LDFL_OP_EXEC_MAP</a>:</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_EXEC_MAP not yet handle&quot;</span>);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_EXEC_MAP not yet handle&quot;</span>);</div>
 <div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
@@ -558,31 +599,31 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a>:</div>
 <div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_MEM_OPEN not yet handle&quot;</span>);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_MEM_OPEN not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a>:</div>
 <div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_STATIC not yet handle&quot;</span>);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_STATIC not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a>:</div>
 <div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_PERM not yet handle&quot;</span>);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_PERM not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">case</span> <a class="code" href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a>:</div>
 <div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_DENY not yet handle&quot;</span>);</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Operation LDFL_OP_DENY not yet handle&quot;</span>);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
 <div class="line">            <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>:</div>
 <div class="line">            *pathname_out = calloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>), strlen(pathname_in) + 1);</div>
 <div class="line">            stpcpy(*pathname_out, pathname_in);</div>
-<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Unknown operation %d not yet handle&quot;</span>,</div>
+<div class="line">            ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a>, LOG_WARNING, <span class="stringliteral">&quot;Unknown operation %d not yet handle&quot;</span>,</div>
 <div class="line">                                mapping_rules[i].mapping-&gt;operation);</div>
 <div class="line">            <span class="keywordflow">return</span>; <span class="comment">// FIXME (don&#39;t only apply the first rule)</span></div>
 <div class="line">        }</div>
@@ -749,6 +790,11 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    ldfl_setting.<a class="code" href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">logger</a>(<a class="code" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a>, LOG_DEBUG, <span class="stringliteral">&quot;initialized&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="preprocessor">#define LDFL_LOG_ERR(expr, fmt, ...)                                                                                   \</span></div>
+<div class="line"><span class="preprocessor">    if (!(expr)) {                                                                                                     \</span></div>
+<div class="line"><span class="preprocessor">        ldfl_setting.logger(LDFL_LOG_FN_CALL_ERR, LOG_ERR, fmt, ##__VA_ARGS__);                                        \</span></div>
+<div class="line"><span class="preprocessor">    }</span></div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">char</span> *apply_rules_and_cleanup(<span class="keywordtype">char</span> *func_name, <span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, uint64_t op_mask) {</div>
 <div class="line">    <span class="keywordtype">char</span>               *reworked_path = NULL;</div>
 <div class="line">    compiled_mapping_t *return_rules;</div>
@@ -777,6 +823,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fopen&quot;</span>, pathname, op_mask);</div>
 <div class="line">    FILE *ret           = real_fopen(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_fopen failed: reworked_path=%s, mode=%s, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -787,6 +835,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fopen64&quot;</span>, pathname, op_mask);</div>
 <div class="line">    FILE *ret           = real_fopen64(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_fopen64 failed: reworked_path=%s, mode=%s, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -804,6 +855,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat, dirfd, reworked_path, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_openat failed: dirfd=%d, reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
+<div class="line">                 flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -821,6 +875,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open, reworked_path, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_open failed: reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_path, flags, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -838,6 +895,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_open64, reworked_path, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_open64 failed: reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, reworked_path, flags, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -855,6 +915,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_mode_wrap(real_openat64, dirfd, reworked_path, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_openat64 failed: dirfd=%d, reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, reworked_path,</div>
+<div class="line">                 flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -867,6 +930,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;rename&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_rename(reworked_oldpath, reworked_newpath);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_rename failed: reworked_oldpath=%s, reworked_newpath=%s, errno=%d (%s)&quot;</span>, reworked_oldpath,</div>
+<div class="line">                 reworked_newpath, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
@@ -884,6 +949,10 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat2&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameat2(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret,</div>
+<div class="line">                 <span class="stringliteral">&quot;real_renameat2 failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, flags=%d, &quot;</span></div>
+<div class="line">                 <span class="stringliteral">&quot;errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -899,6 +968,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renameat&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameat(olddirfd, reworked_oldpath, newdirfd, reworked_newpath);</div>
+<div class="line">    LDFL_LOG_ERR(</div>
+<div class="line">        ret, <span class="stringliteral">&quot;real_renameat failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, errno=%d (%s)&quot;</span>,</div>
+<div class="line">        olddirfd, reworked_oldpath, newdirfd, reworked_newpath, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -911,6 +983,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;unlink&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_unlink(reworked_path);</div>
+<div class="line">    LDFL_LOG_ERR(ret, <span class="stringliteral">&quot;real_unlink failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -923,6 +997,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;unlinkat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_unlinkat(dirfd, reworked_path, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_unlinkat failed: dirfd=%d, reworked_path=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -935,6 +1012,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;utime&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utime(reworked_path, times);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utime failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -948,6 +1027,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;utimes&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utimes(reworked_path, times);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utimes failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -961,6 +1043,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;utimensat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_utimensat(dirfd, pathname, times, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utimensat failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, pathname,</div>
+<div class="line">                 flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -972,6 +1057,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;access&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_access(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_access failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -984,6 +1072,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fstatat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_fstatat(dirfd, pathname, statbuf, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_fstatat failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, pathname,</div>
+<div class="line">                 flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -995,6 +1086,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__xstat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___xstat(version, pathname, statbuf);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___xstat failed: version=%d, pathname=%s, errno=%d (%s)&quot;</span>, version, pathname, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1006,6 +1100,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__xstat64&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___xstat64(version, pathname, statbuf);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___xstat64 failed: version=%d, pathname=%s, errno=%d (%s)&quot;</span>, version, pathname, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1017,6 +1114,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__lxstat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___lxstat(version, pathname, statbuf);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___lxstat failed: version=%d, pathname=%s, errno=%d (%s)&quot;</span>, version, pathname, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1029,6 +1129,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__fxstatat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real___fxstatat(version, dirfd, pathname, statbuf, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___fxstatat failed: version=%d, dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 version, dirfd, pathname, flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1046,6 +1149,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execve(pathname, argv, envp);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execve failed: pathname=%s, errno=%d (%s)&quot;</span>, pathname, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1061,6 +1166,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line">    va_end(args);</div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_str_wrap(real_execl, arg, reworked_path, arg);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execl failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1075,6 +1182,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = ldfl_variadic_str_wrap(real_execlp, arg, reworked_path, arg);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execlp failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1089,6 +1199,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execv(pathname, argv);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execv failed: pathname=%s, errno=%d (%s)&quot;</span>, pathname, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1103,6 +1215,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_execvp(reworked_path, argv);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execvp failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1114,6 +1229,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;opendir&quot;</span>, name, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    DIR *ret = real_opendir(reworked_path);</div>
+<div class="line">    LDFL_LOG_ERR(ret != NULL, <span class="stringliteral">&quot;real_opendir failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1125,6 +1243,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkdir&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkdir(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkdir failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1137,6 +1258,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkdirat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkdirat(dirfd, reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkdirat failed: dirfd=%d, reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, mode, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1148,6 +1272,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;rmdir&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_rmdir(reworked_path);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_rmdir failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1159,6 +1285,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;chdir&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chdir(reworked_path);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chdir failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1172,6 +1300,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_target       = apply_rules_and_cleanup(<span class="stringliteral">&quot;symlink&quot;</span>, target, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_symlink(reworked_target, reworked_linkpathname);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_symlink failed: reworked_target=%s, reworked_linkpathname=%s, errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 reworked_target, reworked_linkpathname, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_linkpathname);</div>
 <div class="line">    free(reworked_target);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1184,6 +1315,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;readlink&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_readlink(reworked_path, buf, bufsiz);</div>
+<div class="line">    LDFL_LOG_ERR(ret != -1, <span class="stringliteral">&quot;real_readlink failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1196,6 +1330,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;link&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_link(reworked_oldpath, reworked_newpath);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_link failed: reworked_oldpath=%s, reworked_newpath=%s, errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 reworked_oldpath, reworked_newpath, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1211,6 +1348,11 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;linkat&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_linkat(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0,</div>
+<div class="line">                 <span class="stringliteral">&quot;real_linkat failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, flags=%d, &quot;</span></div>
+<div class="line">                 <span class="stringliteral">&quot;errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1223,6 +1365,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;chmod&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chmod(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chmod failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1234,6 +1379,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;truncate&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_truncate(reworked_path, length);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_truncate failed: reworked_path=%s, length=%ld, errno=%d (%s)&quot;</span>, reworked_path, length,</div>
+<div class="line">                 errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1246,6 +1394,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;faccessat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_faccessat(dirfd, reworked_path, mode, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_faccessat failed: dirfd=%d, reworked_path=%s, mode=%d, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, mode, flags, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1257,6 +1408,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;stat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_stat(reworked_path, statbuf);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_stat failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1268,6 +1421,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;lstat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_lstat(reworked_path, statbuf);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_lstat failed: reworked_path=%s, errno=%d (%s)&quot;</span>, reworked_path, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1281,6 +1436,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;lchown&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_lchown(reworked_path, owner, group);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_lchown failed: reworked_path=%s, owner=%d, group=%d, errno=%d (%s)&quot;</span>, reworked_path,</div>
+<div class="line">                 owner, group, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1294,6 +1452,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;chown&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_chown(reworked_path, owner, group);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_chown failed: reworked_path=%s, owner=%d, group=%d, errno=%d (%s)&quot;</span>, reworked_path,</div>
+<div class="line">                 owner, group, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1307,6 +1468,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fchmodat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_fchmodat(dirfd, reworked_path, mode, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_fchmodat failed: dirfd=%d, reworked_path=%s, mode=%d, flags=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, mode, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1321,6 +1484,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_linkpathname = apply_rules_and_cleanup(<span class="stringliteral">&quot;symlinkat&quot;</span>, linkpathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_symlinkat(reworked_target, newdirfd, reworked_linkpathname);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0,</div>
+<div class="line">                 <span class="stringliteral">&quot;real_symlinkat failed: reworked_target=%s, newdirfd=%d, reworked_linkpathname=%s, errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 reworked_target, newdirfd, reworked_linkpathname, errno, strerror(errno));</div>
 <div class="line">    free(reworked_target);</div>
 <div class="line">    free(reworked_linkpathname);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1334,6 +1500,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkfifo&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkfifo(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkfifo failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1347,6 +1515,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mkfifoat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mkfifoat(dirfd, reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mkfifoat failed: dirfd=%d, reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, mode, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1360,6 +1530,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mknodat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mknodat(dirfd, reworked_path, mode, dev);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mknodat failed: dirfd=%d, reworked_path=%s, mode=%d, dev=%ld, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, mode, dev, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1373,6 +1545,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;mknod&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_mknod(reworked_path, mode, dev);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_mknod failed: reworked_path=%s, mode=%d, dev=%ld, errno=%d (%s)&quot;</span>, reworked_path, mode,</div>
+<div class="line">                 dev, errno, strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1386,6 +1560,9 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;statx&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_statx(dirfd, reworked_path, flags, mask, statxbuf);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_statx failed: dirfd=%d, reworked_path=%s, flags=%d, mask=%d, errno=%d (%s)&quot;</span>, dirfd,</div>
+<div class="line">                 reworked_path, flags, mask, errno, strerror(errno));</div>
+<div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}</div>
@@ -1398,6 +1575,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;creat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_creat(reworked_path, mode);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_creat failed: reworked_path=%s, mode=%d, errno=%d (%s)&quot;</span>, reworked_path, mode, errno,</div>
+<div class="line">                 strerror(errno));</div>
 <div class="line">    free(reworked_path);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1413,6 +1592,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renamex_np&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renamex_np(reworked_oldpath, reworked_newpath, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_renamex_np failed: reworked_oldpath=%s, reworked_newpath=%s, flags=%d, errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 reworked_oldpath, reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1428,6 +1609,10 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_newpath = apply_rules_and_cleanup(<span class="stringliteral">&quot;renamexat_np&quot;</span>, newpath, op_mask);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">int</span> ret = real_renameatx_np(olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags);</div>
+<div class="line">    LDFL_LOG_ERR(ret == 0,</div>
+<div class="line">                 <span class="stringliteral">&quot;real_renameatx_np failed: olddirfd=%d, reworked_oldpath=%s, newdirfd=%d, reworked_newpath=%s, &quot;</span></div>
+<div class="line">                 <span class="stringliteral">&quot;flags=%d, errno=%d (%s)&quot;</span>,</div>
+<div class="line">                 olddirfd, reworked_oldpath, newdirfd, reworked_newpath, flags, errno, strerror(errno));</div>
 <div class="line">    free(reworked_oldpath);</div>
 <div class="line">    free(reworked_newpath);</div>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
@@ -1436,27 +1621,29 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a></div><div class="ttdeci">ldfl_log_category_t</div><div class="ttdoc">Bitmask flags for specifying logging categories.</div><div class="ttdef"><b>Definition:</b> fliar.c:48</div></div>
-<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784">LDFL_LOG_MAPPING_APPLY</a></div><div class="ttdeci">@ LDFL_LOG_MAPPING_APPLY</div><div class="ttdef"><b>Definition:</b> fliar.c:51</div></div>
-<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d">LDFL_LOG_ALL</a></div><div class="ttdeci">@ LDFL_LOG_ALL</div><div class="ttdef"><b>Definition:</b> fliar.c:53</div></div>
+<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce">LDFL_LOG_MAPPING_RULE_SEARCH</a></div><div class="ttdeci">@ LDFL_LOG_MAPPING_RULE_SEARCH</div><div class="ttdef"><b>Definition:</b> fliar.c:51</div></div>
+<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d">LDFL_LOG_FN_CALL_ERR</a></div><div class="ttdeci">@ LDFL_LOG_FN_CALL_ERR</div><div class="ttdef"><b>Definition:</b> fliar.c:50</div></div>
+<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220">LDFL_LOG_MAPPING_RULE_APPLY</a></div><div class="ttdeci">@ LDFL_LOG_MAPPING_RULE_APPLY</div><div class="ttdef"><b>Definition:</b> fliar.c:53</div></div>
+<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d">LDFL_LOG_ALL</a></div><div class="ttdeci">@ LDFL_LOG_ALL</div><div class="ttdef"><b>Definition:</b> fliar.c:55</div></div>
 <div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a></div><div class="ttdeci">@ LDFL_LOG_FN_CALL</div><div class="ttdef"><b>Definition:</b> fliar.c:49</div></div>
-<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a></div><div class="ttdeci">@ LDFL_LOG_INIT</div><div class="ttdef"><b>Definition:</b> fliar.c:52</div></div>
-<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae">LDFL_LOG_MAPPING_SEARCH</a></div><div class="ttdeci">@ LDFL_LOG_MAPPING_SEARCH</div><div class="ttdef"><b>Definition:</b> fliar.c:50</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493">ldfl_operation_t</a></div><div class="ttdeci">ldfl_operation_t</div><div class="ttdoc">enum for the type of operations</div><div class="ttdef"><b>Definition:</b> fliar.c:60</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a></div><div class="ttdeci">@ LDFL_OP_DENY</div><div class="ttdef"><b>Definition:</b> fliar.c:67</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a></div><div class="ttdeci">@ LDFL_OP_PERM</div><div class="ttdef"><b>Definition:</b> fliar.c:66</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a></div><div class="ttdeci">@ LDFL_OP_MEM_OPEN</div><div class="ttdef"><b>Definition:</b> fliar.c:64</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a></div><div class="ttdeci">@ LDFL_OP_MAP</div><div class="ttdef"><b>Definition:</b> fliar.c:62</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598">LDFL_OP_END</a></div><div class="ttdeci">@ LDFL_OP_END</div><div class="ttdef"><b>Definition:</b> fliar.c:69</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a></div><div class="ttdeci">@ LDFL_OP_NOOP</div><div class="ttdef"><b>Definition:</b> fliar.c:61</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a></div><div class="ttdeci">@ LDFL_OP_STATIC</div><div class="ttdef"><b>Definition:</b> fliar.c:65</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f">LDFL_OP_RO</a></div><div class="ttdeci">@ LDFL_OP_RO</div><div class="ttdef"><b>Definition:</b> fliar.c:68</div></div>
-<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061">LDFL_OP_EXEC_MAP</a></div><div class="ttdeci">@ LDFL_OP_EXEC_MAP</div><div class="ttdef"><b>Definition:</b> fliar.c:63</div></div>
-<div class="ttc" id="afliar_8c_html_af01e883a475e384c464dcaee00aa9d75"><div class="ttname"><a href="fliar_8c.html#af01e883a475e384c464dcaee00aa9d75">ldfl_logger_t</a></div><div class="ttdeci">void(* ldfl_logger_t)(uint64_t mask, int priority, const char *fmt,...)</div><div class="ttdoc">Variadic logger function type.</div><div class="ttdef"><b>Definition:</b> fliar.c:119</div></div>
-<div class="ttc" id="astructldfl__mapping__t_html"><div class="ttname"><a href="structldfl__mapping__t.html">ldfl_mapping_t</a></div><div class="ttdoc">Represents a single file mapping entry.</div><div class="ttdef"><b>Definition:</b> fliar.c:95</div></div>
-<div class="ttc" id="astructldfl__setting__t_html"><div class="ttname"><a href="structldfl__setting__t.html">ldfl_setting_t</a></div><div class="ttdoc">Represents the general settings.</div><div class="ttdef"><b>Definition:</b> fliar.c:126</div></div>
-<div class="ttc" id="astructldfl__setting__t_html_ab5054f140bca02cdfa03c4cd25a42ef0"><div class="ttname"><a href="structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0">ldfl_setting_t::log_mask</a></div><div class="ttdeci">uint64_t log_mask</div><div class="ttdef"><b>Definition:</b> fliar.c:129</div></div>
-<div class="ttc" id="astructldfl__setting__t_html_ab5a71c2541c377b3d5b34fdb35964c2e"><div class="ttname"><a href="structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e">ldfl_setting_t::log_level</a></div><div class="ttdeci">int log_level</div><div class="ttdef"><b>Definition:</b> fliar.c:127</div></div>
-<div class="ttc" id="astructldfl__setting__t_html_ad0f4679de29306d97e9bcf9dbb145f1d"><div class="ttname"><a href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">ldfl_setting_t::logger</a></div><div class="ttdeci">ldfl_logger_t logger</div><div class="ttdef"><b>Definition:</b> fliar.c:128</div></div>
+<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498">LDFL_LOG_MAPPING_RULE_FOUND</a></div><div class="ttdeci">@ LDFL_LOG_MAPPING_RULE_FOUND</div><div class="ttdef"><b>Definition:</b> fliar.c:52</div></div>
+<div class="ttc" id="afliar_8c_html_a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb"><div class="ttname"><a href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb">LDFL_LOG_INIT</a></div><div class="ttdeci">@ LDFL_LOG_INIT</div><div class="ttdef"><b>Definition:</b> fliar.c:54</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493">ldfl_operation_t</a></div><div class="ttdeci">ldfl_operation_t</div><div class="ttdoc">enum for the type of operations</div><div class="ttdef"><b>Definition:</b> fliar.c:62</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d">LDFL_OP_DENY</a></div><div class="ttdeci">@ LDFL_OP_DENY</div><div class="ttdef"><b>Definition:</b> fliar.c:69</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a17e891809190bb90aacd95f6a42c6d14">LDFL_OP_PERM</a></div><div class="ttdeci">@ LDFL_OP_PERM</div><div class="ttdef"><b>Definition:</b> fliar.c:68</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a36668315c968f979dccc61c4e31dd903">LDFL_OP_MEM_OPEN</a></div><div class="ttdeci">@ LDFL_OP_MEM_OPEN</div><div class="ttdef"><b>Definition:</b> fliar.c:66</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a3a60a6d16f4d957965106720a7ebe227">LDFL_OP_MAP</a></div><div class="ttdeci">@ LDFL_OP_MAP</div><div class="ttdef"><b>Definition:</b> fliar.c:64</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598">LDFL_OP_END</a></div><div class="ttdeci">@ LDFL_OP_END</div><div class="ttdef"><b>Definition:</b> fliar.c:71</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a6e7e4bc442da413490297658ef53fc9b">LDFL_OP_NOOP</a></div><div class="ttdeci">@ LDFL_OP_NOOP</div><div class="ttdef"><b>Definition:</b> fliar.c:63</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f">LDFL_OP_STATIC</a></div><div class="ttdeci">@ LDFL_OP_STATIC</div><div class="ttdef"><b>Definition:</b> fliar.c:67</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f">LDFL_OP_RO</a></div><div class="ttdeci">@ LDFL_OP_RO</div><div class="ttdef"><b>Definition:</b> fliar.c:70</div></div>
+<div class="ttc" id="afliar_8c_html_abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061"><div class="ttname"><a href="fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493acc6be11b561749614a1031460f8b7061">LDFL_OP_EXEC_MAP</a></div><div class="ttdeci">@ LDFL_OP_EXEC_MAP</div><div class="ttdef"><b>Definition:</b> fliar.c:65</div></div>
+<div class="ttc" id="afliar_8c_html_af01e883a475e384c464dcaee00aa9d75"><div class="ttname"><a href="fliar_8c.html#af01e883a475e384c464dcaee00aa9d75">ldfl_logger_t</a></div><div class="ttdeci">void(* ldfl_logger_t)(uint64_t mask, int priority, const char *fmt,...)</div><div class="ttdoc">Variadic logger function type.</div><div class="ttdef"><b>Definition:</b> fliar.c:121</div></div>
+<div class="ttc" id="astructldfl__mapping__t_html"><div class="ttname"><a href="structldfl__mapping__t.html">ldfl_mapping_t</a></div><div class="ttdoc">Represents a single file mapping entry.</div><div class="ttdef"><b>Definition:</b> fliar.c:97</div></div>
+<div class="ttc" id="astructldfl__setting__t_html"><div class="ttname"><a href="structldfl__setting__t.html">ldfl_setting_t</a></div><div class="ttdoc">Represents the general settings.</div><div class="ttdef"><b>Definition:</b> fliar.c:128</div></div>
+<div class="ttc" id="astructldfl__setting__t_html_ab5054f140bca02cdfa03c4cd25a42ef0"><div class="ttname"><a href="structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0">ldfl_setting_t::log_mask</a></div><div class="ttdeci">uint64_t log_mask</div><div class="ttdef"><b>Definition:</b> fliar.c:131</div></div>
+<div class="ttc" id="astructldfl__setting__t_html_ab5a71c2541c377b3d5b34fdb35964c2e"><div class="ttname"><a href="structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e">ldfl_setting_t::log_level</a></div><div class="ttdeci">int log_level</div><div class="ttdef"><b>Definition:</b> fliar.c:129</div></div>
+<div class="ttc" id="astructldfl__setting__t_html_ad0f4679de29306d97e9bcf9dbb145f1d"><div class="ttname"><a href="structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d">ldfl_setting_t::logger</a></div><div class="ttdeci">ldfl_logger_t logger</div><div class="ttdef"><b>Definition:</b> fliar.c:130</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -5,8 +5,10 @@ var fliar_8c =
     [ "ldfl_logger_t", "fliar_8c.html#af01e883a475e384c464dcaee00aa9d75", null ],
     [ "ldfl_log_category_t", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255", [
       [ "LDFL_LOG_FN_CALL", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e", null ],
-      [ "LDFL_LOG_MAPPING_SEARCH", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255afdf37ba16500882c1b8dacd755daaeae", null ],
-      [ "LDFL_LOG_MAPPING_APPLY", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a09946469132d3c83b33c4181f75eb784", null ],
+      [ "LDFL_LOG_FN_CALL_ERR", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d", null ],
+      [ "LDFL_LOG_MAPPING_RULE_SEARCH", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a077db752adfed6ef52fb7a24456b05ce", null ],
+      [ "LDFL_LOG_MAPPING_RULE_FOUND", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a78c39aab60aceaf57cfa86d9813d1498", null ],
+      [ "LDFL_LOG_MAPPING_RULE_APPLY", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a44eed41a10b48e72192d24b70c669220", null ],
       [ "LDFL_LOG_INIT", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255acc73c689eeac24b1f8d020e39f70babb", null ],
       [ "LDFL_LOG_ALL", "fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d", null ]
     ] ],
