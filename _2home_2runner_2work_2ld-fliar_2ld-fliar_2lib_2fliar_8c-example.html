@@ -460,12 +460,13 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">            <span class="keywordflow">continue</span>;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordtype">int</span> matching_rule_count = 1;</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; ldfl_rule_count; j++) {</div>
-<div class="line">            <span class="keywordflow">if</span> (ldfl_compiled_rules[j].matching_regex != NULL) {</div>
-<div class="line">                <span class="keywordflow">break</span>;</div>
-<div class="line">            }</div>
-<div class="line">            matching_rule_count++;</div>
-<div class="line">        }</div>
+<div class="line">        <span class="comment">// Disable multi-rule for now</span></div>
+<div class="line">        <span class="comment">// for (int j = i + 1; j &lt; ldfl_rule_count; j++) {</span></div>
+<div class="line">        <span class="comment">//     if (ldfl_compiled_rules[j].matching_regex != NULL) {</span></div>
+<div class="line">        <span class="comment">//         break;</span></div>
+<div class="line">        <span class="comment">//     }</span></div>
+<div class="line">        <span class="comment">//     matching_rule_count++;</span></div>
+<div class="line">        <span class="comment">// }</span></div>
 <div class="line">        *return_rules = calloc(<span class="keyword">sizeof</span>(compiled_mapping_t *), matching_rule_count + 1);</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; matching_rule_count; j++) {</div>
