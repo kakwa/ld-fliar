@@ -1040,7 +1040,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;utimensat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_utimensat(dirfd, pathname, times, flags);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_utimensat(dirfd, reworked_path, times, flags);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_utimensat failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, pathname,</div>
 <div class="line">                 flags, errno, strerror(errno));</div>
 <div class="line"> </div>
@@ -1069,7 +1069,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;fstatat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_fstatat(dirfd, pathname, statbuf, flags);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_fstatat(dirfd, reworked_path, statbuf, flags);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_fstatat failed: dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>, dirfd, pathname,</div>
 <div class="line">                 flags, errno, strerror(errno));</div>
 <div class="line"> </div>
@@ -1083,7 +1083,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__xstat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real___xstat(version, pathname, statbuf);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real___xstat(version, reworked_path, statbuf);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___xstat failed: version=%d, pathname=%s, errno=%d (%s)&quot;</span>, version, pathname, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
@@ -1097,7 +1097,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__xstat64&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real___xstat64(version, pathname, statbuf);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real___xstat64(version, reworked_path, statbuf);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___xstat64 failed: version=%d, pathname=%s, errno=%d (%s)&quot;</span>, version, pathname, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
@@ -1111,7 +1111,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__lxstat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real___lxstat(version, pathname, statbuf);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real___lxstat(version, reworked_path, statbuf);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___lxstat failed: version=%d, pathname=%s, errno=%d (%s)&quot;</span>, version, pathname, errno,</div>
 <div class="line">                 strerror(errno));</div>
 <div class="line"> </div>
@@ -1126,7 +1126,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    RINIT;</div>
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;__fxstatat&quot;</span>, pathname, op_mask);</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real___fxstatat(version, dirfd, pathname, statbuf, flags);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real___fxstatat(version, dirfd, reworked_path, statbuf, flags);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real___fxstatat failed: version=%d, dirfd=%d, pathname=%s, flags=%d, errno=%d (%s)&quot;</span>,</div>
 <div class="line">                 version, dirfd, pathname, flags, errno, strerror(errno));</div>
 <div class="line"> </div>
@@ -1146,7 +1146,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;execve&quot;</span>, pathname, op_mask);</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_execve(pathname, argv, envp);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_execve(reworked_path, argv, envp);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execve failed: pathname=%s, errno=%d (%s)&quot;</span>, pathname, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
@@ -1195,7 +1195,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2ld-fliar_2ld-fli
 <div class="line">    <span class="keywordtype">char</span> *reworked_path = apply_rules_and_cleanup(<span class="stringliteral">&quot;execv&quot;</span>, pathname, op_mask);</div>
 <div class="line">    <span class="comment">// TODO argv[0]</span></div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> ret = real_execv(pathname, argv);</div>
+<div class="line">    <span class="keywordtype">int</span> ret = real_execv(reworked_path, argv);</div>
 <div class="line">    LDFL_LOG_ERR(ret == 0, <span class="stringliteral">&quot;real_execv failed: pathname=%s, errno=%d (%s)&quot;</span>, pathname, errno, strerror(errno));</div>
 <div class="line"> </div>
 <div class="line">    free(reworked_path);</div>
