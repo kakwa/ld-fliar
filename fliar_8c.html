@@ -113,6 +113,11 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a00ce868987910aa1099c0346978920c8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fliar_8c.html#a00ce868987910aa1099c0346978920c8">ldfl_path_type_t</a> { <a class="el" href="fliar_8c.html#a00ce868987910aa1099c0346978920c8a4d044ee717bc0fa227db78502b06c416">LDFL_PATH_ORIG</a> = 0
+, <a class="el" href="fliar_8c.html#a00ce868987910aa1099c0346978920c8afe7093bca97a1d172f8aeaacc523e3be">LDFL_PATH_ABS</a> = 1
+ }</td></tr>
+<tr class="memdesc:a00ce868987910aa1099c0346978920c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag  <a href="fliar_8c.html#a00ce868987910aa1099c0346978920c8">More...</a><br /></td></tr>
+<tr class="separator:a00ce868987910aa1099c0346978920c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bdab280ef8641c794cdbd2befac9255"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255">ldfl_log_category_t</a> { <br />
 &#160;&#160;<a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a6f01086937a06e155c83d78a2ae4674e">LDFL_LOG_FN_CALL</a> = 1ULL &lt;&lt; 0
 , <a class="el" href="fliar_8c.html#a1bdab280ef8641c794cdbd2befac9255a1a5c96714ac00b2551d5760bc2145f1d">LDFL_LOG_FN_CALL_ERR</a> = 1ULL &lt;&lt; 1
@@ -176,7 +181,7 @@ Enumerations</h2></td></tr>
 <li><code>ldfl_syslog_logger</code>: Logs messages to the system log (syslog). </li>
 </ul>
 </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a19">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a22">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
 </dl>
 
 </div>
@@ -212,7 +217,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a1bdab280ef8641c794cdbd2befac9255a68a074151cd6b8e4eda0c8ead842ba1d"></a>LDFL_LOG_ALL&#160;</td><td class="fielddoc"><p>Log all categories. </p>
 </td></tr>
 </table>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a7">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a10">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
 </dl>
 
 </div>
@@ -250,7 +255,30 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598"></a>LDFL_OP_END&#160;</td><td class="fielddoc"><p>End marker. </p>
 </td></tr>
 </table>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a17">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a20">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a00ce868987910aa1099c0346978920c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ce868987910aa1099c0346978920c8">&#9670;&nbsp;</a></span>ldfl_path_type_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="fliar_8c.html#a00ce868987910aa1099c0346978920c8">ldfl_path_type_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>flag </p>
+<p>This enumeration defines if we should use the absolute path or the unaltered path in the transformation. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a00ce868987910aa1099c0346978920c8a4d044ee717bc0fa227db78502b06c416"></a>LDFL_PATH_ORIG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a00ce868987910aa1099c0346978920c8afe7093bca97a1d172f8aeaacc523e3be"></a>LDFL_PATH_ABS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2ld-fliar_2ld-fliar_2lib_2fliar_8c-example.html#a2">/home/runner/work/ld-fliar/ld-fliar/lib/fliar.c</a>.</dd>
 </dl>
 
 </div>

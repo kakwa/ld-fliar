@@ -21,8 +21,11 @@ var searchData=
   ['ldfl_5fop_5fro_20',['LDFL_OP_RO',['../fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f',1,'fliar.c']]],
   ['ldfl_5fop_5fstatic_21',['LDFL_OP_STATIC',['../fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a892cc08e564138612f655a83e282ef9f',1,'fliar.c']]],
   ['ldfl_5foperation_5ft_22',['ldfl_operation_t',['../fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493',1,'fliar.c']]],
-  ['ldfl_5fsetting_5ft_23',['ldfl_setting_t',['../structldfl__setting__t.html',1,'']]],
-  ['log_5flevel_24',['log_level',['../structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e',1,'ldfl_setting_t']]],
-  ['log_5fmask_25',['log_mask',['../structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0',1,'ldfl_setting_t']]],
-  ['logger_26',['logger',['../structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d',1,'ldfl_setting_t']]]
+  ['ldfl_5fpath_5fabs_23',['LDFL_PATH_ABS',['../fliar_8c.html#a00ce868987910aa1099c0346978920c8afe7093bca97a1d172f8aeaacc523e3be',1,'fliar.c']]],
+  ['ldfl_5fpath_5forig_24',['LDFL_PATH_ORIG',['../fliar_8c.html#a00ce868987910aa1099c0346978920c8a4d044ee717bc0fa227db78502b06c416',1,'fliar.c']]],
+  ['ldfl_5fpath_5ftype_5ft_25',['ldfl_path_type_t',['../fliar_8c.html#a00ce868987910aa1099c0346978920c8',1,'fliar.c']]],
+  ['ldfl_5fsetting_5ft_26',['ldfl_setting_t',['../structldfl__setting__t.html',1,'']]],
+  ['log_5flevel_27',['log_level',['../structldfl__setting__t.html#ab5a71c2541c377b3d5b34fdb35964c2e',1,'ldfl_setting_t']]],
+  ['log_5fmask_28',['log_mask',['../structldfl__setting__t.html#ab5054f140bca02cdfa03c4cd25a42ef0',1,'ldfl_setting_t']]],
+  ['logger_29',['logger',['../structldfl__setting__t.html#ad0f4679de29306d97e9bcf9dbb145f1d',1,'ldfl_setting_t']]]
 ];

@@ -22,5 +22,9 @@ var fliar_8c =
       [ "LDFL_OP_DENY", "fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a1200d9f1258dc1018292d2b38fc8558d", null ],
       [ "LDFL_OP_RO", "fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493ac881fc181c136fe5c7ef36369426c87f", null ],
       [ "LDFL_OP_END", "fliar_8c.html#abad0b5782811758b54e9f82b0a9a2493a69a4897e28b46b7b69086c9245937598", null ]
+    ] ],
+    [ "ldfl_path_type_t", "fliar_8c.html#a00ce868987910aa1099c0346978920c8", [
+      [ "LDFL_PATH_ORIG", "fliar_8c.html#a00ce868987910aa1099c0346978920c8a4d044ee717bc0fa227db78502b06c416", null ],
+      [ "LDFL_PATH_ABS", "fliar_8c.html#a00ce868987910aa1099c0346978920c8afe7093bca97a1d172f8aeaacc523e3be", null ]
     ] ]
 ];
